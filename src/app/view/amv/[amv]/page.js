@@ -38,7 +38,7 @@ export default async function AMV({ params }) {
 
     return amvData ? (
         <main className="flex">
-            <section className={`flex flex-col`}>
+            <section className={`flex flex-col w-full`}>
                 <AmvIFrameComponent amvData={amvData} params={params} />
 
                 <h1 target="iframeTitle" className='pt-4'>{amvData.title}</h1>
