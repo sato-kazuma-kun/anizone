@@ -26,7 +26,7 @@ export default async function Anime({ params }) {
 
     return animeData || currentEpisode ? (
         <main>
-            <section className={`flex flex-col`}>
+            <section className={`flex flex-col w-full`}>
 
                 <AnimeIFrameComponent animeData={animeData} params={params} />
 
