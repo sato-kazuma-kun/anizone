@@ -30,7 +30,23 @@ export default async function Anime({ params }) {
 
                 <AnimeIFrameComponent animeData={animeData} params={params} />
 
-                <h1 target="iframeTitle" className='pt-4'>{animeData.title} {currentEpisode.episode}</h1>
+                <h1 target="iframeTitle" className='pt-4'>
+                    {`${animeData.title} ${(() => {
+                        let episodeType = `${currentEpisode.episode}`;
+                        switch (episodeType) {
+                            case 'full-movie':
+                                return 'Full Movie';
+                            case 'ova':
+                                return 'OVA';
+                            case 'ona':
+                                return 'ONA';
+                            case 'special':
+                                return 'Special';
+                            default:
+                                return episodeType;
+                        }
+                    })()}`}
+                </h1>
             </section>
         </main>
     ) : (
