@@ -1,5 +1,9 @@
+"use server"
+
 import { animeDataAPI } from '@/api/api'
 // import userDataAPI from '@/api/api'
+
+const userDataAPI = "https://aniflex-beta.vercel.app/test-json/user-pref.json"
 
 var animes = []
 var userPreferences = []
@@ -7,29 +11,33 @@ var userPreferences = []
 async function fetchAnimes() {
     const datas = await animeDataAPI();
     animes = datas;
-    calcUserPref();
 }
 
-function fetchUserPreferences() {
-    fetch('/test-json/user-pref.json')
-        .then(response => response.json())
-        .then(data => {
-            userPreferences = data;
-            calcUserPref();
-        })
-        .catch(error => {
-            console.error('Error fetching user preferences:', error);
-        });
+async function fetchUserPreferences() {
+    try {
+        const response = await fetch(userDataAPI);
+        if (!response.ok) {
+            throw new Error("Failed to fetch user preferences");
+        }
+
+        const data = await response.json();
+        userPreferences = data
+    } catch (error) {
+        console.error("Error fetching user preferences:", error);
+    }
 }
 
-// function fetchUserPreferences() {
-//     const datas = userDataAPI()
+// async function fetchUserPreferences() {
+//     const datas = await userDataAPI()
 //     userPreferences = datas
 //     calcUserPref();
 // }
 
 export async function calcUserPref() {
-    await Promise.all([fetchAnimes(), fetchUserPreferences()]);
+    await fetchAnimes();
+    await fetchUserPreferences();
+    console.log("Function called!")
+    console.log("Animes:", animes, "\n", "User pref:", userPreferences)
 
     if (animes.length === 0 || userPreferences.length === 0) {
         // Wait until both data sets are fetched
@@ -54,7 +62,7 @@ export async function calcUserPref() {
     shuffleArray(suggestions);
 
     console.table(suggestions)
-    return(suggestions);
+    return (suggestions);
 }
 
 // Function to shuffle an array in place
