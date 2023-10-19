@@ -30,7 +30,7 @@ export default async function Anime({ params }) {
 
                 <AnimeIFrameComponent animeData={animeData} params={params} />
 
-                <h1 target="iframeTitle" className='pt-4'>{animeData.title} {currentEpisode}</h1>
+                <h1 target="iframeTitle" className='pt-4'>{animeData.title} {currentEpisode.episode}</h1>
             </section>
         </main>
     ) : (
