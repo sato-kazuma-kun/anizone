@@ -1,1 +1,38 @@
-
+[
+    {
+        "preferenceLevel": 10,
+        "genre": "Horror"
+    },
+    {
+        "preferenceLevel": 10,
+        "genre": "Shounen"
+    },
+    {
+        "preferenceLevel": 20,
+        "genre": "Romance"
+    },
+    {
+        "preferenceLevel": 10,
+        "genre": "Action"
+    },
+    {
+        "preferenceLevel": 10,
+        "genre": "Adventure"
+    },
+    {
+        "preferenceLevel": 10,
+        "genre": "Slice of Life"
+    },
+    {
+        "preferenceLevel": 10,
+        "genre": "Supernatural"
+    },
+    {
+        "preferenceLevel": 10,
+        "genre": "Mystery"
+    },
+    {
+        "preferenceLevel": 10,
+        "genre": "Comedy"
+    }
+]
