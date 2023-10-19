@@ -175,7 +175,7 @@ export default function CarouselComponent() {
                     </div>
 
                     {!isMobile ? (
-                        <div style={{ display: contents && contents.length <= 1 ? 'none' : 'block' }} className={carousel.sliderControls}>
+                        <div style={{ display: contents && contents.length <= 1 ? 'none' : 'flex' }} className={carousel.sliderControls}>
                             <button data-tooltip-id="carousel-tooltip" data-tooltip-content="Previous" className={carousel.prevButton}>
                                 &lt;
                             </button>
