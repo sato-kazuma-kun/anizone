@@ -30,7 +30,7 @@ export default async function Anime({ params }) {
 
                 <AnimeIFrameComponent animeData={animeData} params={params} />
 
-                <h1 target="iframeTitle" className='pt-4'>Anime episode too large to upload (2GB+) bear with this AMV for now, I&#39;ll upload it later.</h1>
+                <h1 target="iframeTitle" className='pt-4'>{animeData.title} {currentEpisode}</h1>
             </section>
         </main>
     ) : (
