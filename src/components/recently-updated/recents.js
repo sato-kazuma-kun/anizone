@@ -65,7 +65,24 @@ export default function RecentlyUpdatedComponent({ title, link, link_title }) {
                         <Link className={styles.thumbnailLink} href={`/view/${data.anime}/${data.episodes[data.episodes.length - 1].episode}`}>
                                 <Image width={300} height={168} className={styles.thumbnail} src={`${data.episodes[data.episodes.length - 1].thumbnail}`} alt={data.title} />
                                 <div className={styles.videoTitle}>{data.title}</div>
-                                <div className={styles.videoData}>Episode {data.episodes[data.episodes.length - 1].episode}</div>
+                                {/* <div className={styles.videoData}>Episode {data.episodes[data.episodes.length - 1].episode}</div> */}
+                                <div className={styles.videoData}>
+                                  {(() => {
+                                    switch (data.episode) {
+                                      case 1:
+                                        return `Episode ${data.episodes[data.episodes.length - 1].episode}`;
+                                      case 'full-movie':
+                                        return 'Full movie';
+                                      case 'ova':
+                                        return 'OVA';
+                                      case 'special':
+                                        return 'Special Episode';
+                                      default:
+                                        return 'Unknown Type';
+                                    }
+                                  })()}
+                                </div>
+
                                 <div className={styles.videoDuration}>{data.episodes[data.episodes.length - 1].duration}</div>
                                 <div className={styles.videoWatch}>
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#f47521" height="24px" width="24px" version="1.1" id="Capa_1" viewBox="0 0 24 24" xmlSpace="preserve">
