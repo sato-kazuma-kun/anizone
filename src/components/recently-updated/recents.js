@@ -68,7 +68,7 @@ export default function RecentlyUpdatedComponent({ title, link, link_title }) {
                                 {/* <div className={styles.videoData}>Episode {data.episodes[data.episodes.length - 1].episode}</div> */}
                                 <div className={styles.videoData}>
                                   {(() => {
-                                    switch (data.episode) {
+                                    switch (data.episodes[data.episodes.length - 1].episode) {
                                       case 1:
                                         return `Episode ${data.episodes[data.episodes.length - 1].episode}`;
                                       case 'full-movie':
