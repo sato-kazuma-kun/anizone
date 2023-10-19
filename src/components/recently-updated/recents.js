@@ -20,7 +20,7 @@ export default function RecentlyUpdatedComponent({ title, link, link_title }) {
             setError(null)
 
             const datas = await animeDataAPI()
-            const fetchedData = datas.slice(-Math.min(datas.length, 8))
+            const fetchedData = datas.slice(-Math.min(datas.length, 8)).reverse()
             setDatas(fetchedData)
 
             setIsLoading(false)
