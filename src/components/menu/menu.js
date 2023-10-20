@@ -144,7 +144,7 @@ const MenuComponent = React.forwardRef((props, ref) => {
                     </Link>
 
                     {isR18PlusChecked === 'checked' && (
-                        <Link href="/view/hentai" className={menu.navItems} id={pathname === '/view/browse-hentai' ? 'active' : 'notActive'}>
+                        <Link href="/view/hentai" className={menu.navItems} id={pathname === '/view/hentai' ? 'active' : 'notActive'}>
                             <div>Browse Hentai</div>
                         </Link>
                     )}
