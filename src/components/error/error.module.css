@@ -1,0 +1,33 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--centerAlways);
+    align-items: var(--centerAlways);
+    padding-top: 3rem;
+    border-top: 5px solid var(--color);
+    margin-left: calc( var(--default-pageBorder) + .5rem );
+    margin-right: calc( var(--default-pageBorder) + .5rem );
+    height: 200px;
+}
+
+.errorText {
+    padding-bottom: 2rem;
+}
+
+.retryButton {
+    background-color: rgba(108, 56, 222, 255);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+
+.retryButton:hover {
+    background-color: rgba(108, 56, 222, 0.7);
+}
+
+.retryButton:focus {
+    outline: none;
+}
