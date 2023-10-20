@@ -8,7 +8,7 @@
         "genre": "Shounen"
     },
     {
-        "preferenceLevel": 20,
+        "preferenceLevel": 10,
         "genre": "Romance"
     },
     {
@@ -36,7 +36,7 @@
         "genre": "Comedy"
     },
     {
-        "preferenceLevel": 0,
+        "preferenceLevel": 10,
         "genre": "Vanilla"
     },
     {
