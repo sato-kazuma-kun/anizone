@@ -3,7 +3,7 @@
 import { animeDataAPI } from '@/api/api'
 // import userDataAPI from '@/api/api'
 
-const userDataAPI = "http://localhost:3000/test-json/user-pref.json"
+const userDataAPI = "https://aniflex-beta.vercel.app/test-json/user-pref.json"
 
 var animes = []
 var userPreferences = []
