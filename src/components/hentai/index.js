@@ -1,25 +1,18 @@
 "use client"
 
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './hentai.module.css'
 import Suggesstion from '@/components/suggesstion/suggestion';
 import { calcUserPref } from '@/algorithm/hentai-suggestion';
-
-let isR18PlusChecked = 'unchecked';
-
-export function updateIsR18PlusCheckedInHentai(newState) {
-    isR18PlusChecked = newState
-    // Update the local storage or perform other actions as needed
-    if (typeof localStorage !== 'undefined') {
-        localStorage.setItem('ShowR18+', newState);
-    }
-};
+import { checkLocalStorage } from '@/utils/function';
 
 export default function HentaiComponent() {
+    const [isR18PlusChecked, setIsR18PlusChecked] = useState('unchecked');
+
     useEffect(() => {
-        const showR18Plus = localStorage.getItem('ShowR18+') || 'unchecked';
-        isR18PlusChecked = showR18Plus
+        const showR18Plus = checkLocalStorage('ShowR18+', 'unchecked');
+        setIsR18PlusChecked(showR18Plus);
     }, []);
 
     return (
