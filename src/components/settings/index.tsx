@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { updateIsR18PlusCheckedInMenu } from '@/components/menu/menu';
-import { updateIsR18PlusCheckedInHentai } from '@/components/hentai';
 
 interface SettingComponentsProps {
   settingLabel: string;
@@ -12,7 +11,6 @@ interface SettingComponentsProps {
   id: string;
   className?: string | undefined;
   updateIsR18PlusCheckedInMenu?: (newState: string) => void | undefined;
-  updateIsR18PlusCheckedInHentai?: (newState: string) => void | undefined;
 }
 
 const SettingComponents: React.FC<SettingComponentsProps> = ({ className, settingLabel, settingDescription, id }) => {
@@ -24,7 +22,6 @@ const SettingComponents: React.FC<SettingComponentsProps> = ({ className, settin
 
     // Call the function from menu.js to update its state
     updateIsR18PlusCheckedInMenu(newDataState ? 'checked' : 'unchecked');
-    updateIsR18PlusCheckedInHentai(newDataState ? 'checked' : 'unchecked');
 
     if (typeof localStorage !== 'undefined') {
       localStorage.setItem(id, newDataState ? 'checked' : 'unchecked');
