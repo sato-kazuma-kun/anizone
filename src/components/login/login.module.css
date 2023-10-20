@@ -1,0 +1,160 @@
+/* menu.module.css */
+
+.header {
+    /* ... existing styles ... */
+    max-width: 800px;
+    /* Set max width of the header */
+    margin: 0 auto;
+    /* Center the header horizontally */
+}
+
+.sidebar {
+    /* ... existing styles ... */
+    max-width: 800px;
+    /* Set max width of the sidebar */
+    margin: 0 auto;
+    /* Center the sidebar horizontally */
+    top: 70px;
+    /* Distance from the top of the header */
+    left: 0;
+    /* Align the sidebar to the left */
+    bottom: 0;
+    /* Align the sidebar to the bottom */
+}
+
+.headerElements {
+    /* ... existing styles ... */
+    max-width: 800px;
+    /* Set max width of the header elements */
+    margin: 0 auto;
+    /* Center the header elements horizontally */
+    top: 0;
+    /* Align the header elements to the top of the header */
+    right: 0;
+    /* Align the header elements to the right of the header */
+    bottom: 0;
+    /* Align the header elements to the bottom of the header */
+    display: flex;
+    /* Use flexbox to align the elements horizontally */
+    justify-content: space-between;
+    /* Space the elements evenly */
+    align-items: center;
+    /* Center the elements vertically */
+    padding: 0 20px;
+    /* Add padding to the header elements */
+}
+
+/* Additional styles for the form fields */
+.form {
+    /* ... existing styles ... */
+    max-width: 800px;
+    /* Set max width of the form */
+    margin: 0 auto;
+    /* Center the form horizontally */
+    top: 50%;
+    /* Align the form to the vertical center */
+    left: 50%;
+    /* Align the form to the horizontal center */
+    padding: 20px;
+    /* Add padding to the form */
+}
+
+.email,
+.pass {
+    /* ... existing styles ... */
+    margin-bottom: 20px;
+    /* Add margin between form fields */
+}
+
+.label {
+    /* ... existing styles ... */
+    display: block;
+    /* Display the label as block element */
+    font-weight: bold;
+    /* Set font weight for labels */
+}
+
+.input {
+    /* ... existing styles ... */
+    width: 100%;
+    /* Set the .input width to 100% */
+    padding: .5rem;
+    /* Add padding to the .input */
+    /* Set font size for .inputs */
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.submit {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    place-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: rgba(108, 56, 222, 255);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+
+.btn:hover {
+    background-color: rgba(108, 56, 222, 0.7);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.revealBtn {
+    /* background-color: white;
+    color: black;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: 3rem; */
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    /* Use your desired color for the button text */
+    padding: .5rem;
+    right: 0;
+    z-index: 9999;
+    position: absolute;
+}
+
+.passInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ifNot {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    place-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.ifNotBtn {
+    padding: 5px 10px !important;
+}
+
+.ifNotP {
+    padding-right: 1rem !important;
+}

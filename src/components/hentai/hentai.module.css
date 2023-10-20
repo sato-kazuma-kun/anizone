@@ -1,0 +1,9 @@
+.container {
+    margin-inline: calc(var(--default-pageBorder) + 1rem);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-inline: var(--default-pageBorder);
+    }
+}

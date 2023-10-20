@@ -1,0 +1,332 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+
+
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --primary-glow: conic-gradient(from 180deg at 50% 50%,
+      #16abff33 0deg,
+      #0885ff33 55deg,
+      #54d6ff33 120deg,
+      #0071ff33 160deg,
+      transparent 360deg);
+  --secondary-glow: radial-gradient(rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0));
+
+  --tile-start-rgb: 239, 245, 249;
+  --tile-end-rgb: 228, 232, 233;
+  --tile-border: conic-gradient(#00000080,
+      #00000040,
+      #00000030,
+      #00000020,
+      #00000010,
+      #00000010,
+      #00000080);
+
+  --callout-rgb: 238, 240, 241;
+  --callout-border-rgb: 172, 175, 176;
+  --card-rgb: 180, 185, 188;
+  --card-border-rgb: 131, 134, 135;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+
+    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+    --secondary-glow: linear-gradient(to bottom right,
+        rgba(1, 65, 255, 0),
+        rgba(1, 65, 255, 0),
+        rgba(1, 65, 255, 0.3));
+
+    --tile-start-rgb: 2, 13, 46;
+    --tile-end-rgb: 2, 5, 19;
+    --tile-border: conic-gradient(#ffffff80,
+        #ffffff40,
+        #ffffff30,
+        #ffffff20,
+        #ffffff10,
+        #ffffff10,
+        #ffffff80);
+
+    --callout-rgb: 20, 20, 20;
+    --callout-border-rgb: 108, 108, 108;
+    --card-rgb: 100, 100, 100;
+    --card-border-rgb: 200, 200, 200;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add this style to disable scrolling on the body */
+body.scroll-disabled {
+  overflow: hidden;
+  pointer-events: none;
+  background-color: var(--background);
+}
+
+header.scroll-disabled {
+  overflow: hidden;
+  pointer-events: none;
+  background-color: var(--background);
+}
+
+:root {
+  /* --default-pageBorder: 13vw; */
+  --default-pageBorder: 1rem;
+  --auto-width: auto;
+  --animation-timing: 300ms ease-in-out;
+  --center: left;
+  --centerAlways: center;
+  --aspectRatioLandscape: 16 / 9;
+  --aspectRatioPortrait: 2 / 3;
+}
+
+@media only screen and (max-width: 1300px) {
+  :root {
+    --center: center;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --default-pageBorder: .25rem;
+  }
+}
+
+:root {
+  /* --background: #121212; */
+  --background: rgb(0, 0, 0);
+  /* --background: #0f0f0f; */
+  /* --background: #212121; */
+  /* --background: transparent; */
+  --color: white;
+  --color_hover: #dadada;
+
+  --background_image: #0f0f0f;
+
+  /* For Scrollbar Track */
+  --background_track: #0f0f0f;
+}
+
+:root {
+  --skelatonAnimation: skelaton-loading 1s linear infinite alternate;
+}
+
+@keyframes skelaton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: .7rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #212121;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background_track);
+  filter: var(--filter_track);
+}
+
+@keyframes skelaton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+::-moz-selection {
+  color: #f47521;
+  background-color: whitesmoke;
+}
+
+::selection {
+  color: #f47521;
+  background-color: whitesmoke;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Genshin Imapact Fonts', sans-serif;
+}
+
+
+@font-face {
+  font-family: 'Genshin Imapact Fonts';
+  src: url('../../public/assets/fonts/Genshin\ Imapact\ Font.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+input::placeholder {
+  font-family: 'Genshin Imapact Fonts', sans-serif;
+}
+
+input[type="text"],
+input[type="search"] {
+  font-family: 'Genshin Imapact Fonts', sans-serif;
+}
+
+body {
+  font-family: 'Genshin Imapact Fonts', sans-serif;
+  /* background-color: #23252b; */
+  background: var(--background_image);
+  filter: var(--filter);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 1;
+  color: var(--color);
+}
+
+
+a:focus,
+a:visited,
+a:active,
+a:hover {
+  outline: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover {
+  color: var(--color);
+  text-decoration: none;
+}
+
+/* Menu */
+
+:root {
+  --bar-width: 20px;
+  --bar-height: 3px;
+  --hamburger-gap: 3px;
+  --hamburger-margin: 1.5rem;
+  --foreground-Menu: #212121;
+  --background: white;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+  --background_image: #0f0f0f;
+}
+
+main {
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+#active {
+  background-color: #111;
+  border-radius: 10px;
+}
+
+#notActive {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+/* body #header #menu:has(#hamburger-checkbox:checked) ~ main {
+  pointer-events: none;
+  filter: brightness(0.5);
+  transition: filter 0.3s ease;
+} */
+
+.main-with-filter {
+  pointer-events: none;
+  filter: brightness(.2);
+  transition: filter 0.3s ease;
+}
+
+.html-with-filter {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  iframe[target="videoIframe"] {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  h1[target="iframeTitle"] {
+    margin-left: 0 !important;
+  }
+}
+
+iframe[target="videoIframe"] {
+  margin-left: 2rem;
+}
+
+h1[target="iframeTitle"] {
+  margin-left: 2rem;
+}
+
+:root {
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --background: 0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 47.4% 11.2%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --theme: #f47521;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 215 20.2% 65.1%;
+  --radius: 0.5rem;
+  --warning: 38 92% 50%;
+  --warning-foreground: 48 96% 89%;
+}

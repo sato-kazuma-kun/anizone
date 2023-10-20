@@ -1,0 +1,141 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    place-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    place-content: center;
+    align-items: center;
+}
+
+.profilePicContainer {
+    margin: 0 auto;
+    width: 200px; /* Set the desired width */
+    height: 200px; /* Set the desired height */
+    border-radius: 50%;
+    overflow: hidden; /* Clip the image to the circle */
+  }
+  
+  .profilePic {
+    animation: var(--skelatonAnimation);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+  }
+  
+
+.dataContainer,
+.userData {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    place-content: center;
+    align-items: center;
+}
+
+.welcomeUser {
+    padding-top: .5rem;
+    padding-bottom: 2rem;
+}
+
+.userID {
+    padding-bottom: .25rem;
+}
+
+.userName {
+    padding-top: .25rem;
+}
+
+.logoutBtnContainer {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    place-content: center;
+    align-items: center;
+}
+
+.logoutBtn, .btn {
+    background-color: rgba(108, 56, 222, 255);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+
+.logoutBtn:hover, .btn:hover {
+    background-color: rgba(108, 56, 222, 0.7);
+}
+
+.logoutBtn:focus, .btn:focus {
+    outline: none;
+}
+
+
+/* Style for Admin's Dashboard */
+
+.adminsDashboard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 2rem;
+    place-content: center;
+    align-items: center;
+}
+
+.admin {
+    margin-bottom: 2rem;
+}
+
+
+.preview {
+    display: flex;
+    place-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.profilePreview {
+    max-width: 400px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.revealBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    padding: .5rem;
+    right: 0;
+    z-index: 9999;
+    position: absolute;
+}
+
+.input {
+    width: 100%;
+    outline: none;
+    position: relative;
+}
+
+.adminsDashboard {
+    margin: 0 auto;
+}
