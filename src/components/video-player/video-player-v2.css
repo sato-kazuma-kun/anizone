@@ -1,0 +1,428 @@
+.main-video[target="controls"]::cue {
+    opacity: 0;
+}
+
+.caption_text[target="controls"] {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    width: 90%;
+    max-width: 90%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    user-select: none;
+    transition: bottom 0.3s;
+}
+
+.caption_text[target="controls"].active[target="controls"] {
+    bottom: 0%;
+}
+
+.caption_text[target="controls"] mark[target="controls"] {
+    background-color: #0000008f !important;
+    color: #fff;
+}
+
+
+.material-icons[target="controls"] {
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+.section[target="controls"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+    width: 100%;
+    padding: 1.7%;
+}
+
+.container[target="controls"] {
+    position: relative;
+    width: 65vw;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Video player Styling */
+.container[target="controls"] .video_player[target="controls"] {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.container[target="controls"] .video_player[target="controls"] .loader[target="controls"] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
+}
+
+.container[target="controls"] .video_player[target="controls"] .thumbnail[target="controls"] {
+    position: absolute;
+    bottom: 80px;
+    left: calc(var(--x) + 11px);
+    transform: translateX(-50%);
+    width: 230px;
+    height: auto;
+    background: #fff;
+    border-radius: 3px;
+    display: none;
+}
+
+.container[target="controls"] .video_player[target="controls"] .main-video[target="controls"] {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+
+.video_player[target="controls"] .progressAreaTime[target="controls"] {
+    position: absolute;
+    left: calc(var(--x) + 11px);
+    transform: translateX(-50%);
+    bottom: 70px;
+    min-width: 70px;
+    text-align: center;
+    white-space: nowrap;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    z-index: 1;
+    display: none;
+}
+
+.container[target="controls"] .video_player[target="controls"] .controls[target="controls"] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background: rgb(0 0 0 / 29%);
+    box-shadow: 0 0 40px 10px rgb(0 0 0 / 25%);
+    z-index: 3;
+    transform: translateY(180%);
+    transition: 0.3s;
+    padding: 0px 10px;
+}
+
+.container[target="controls"] .video_player[target="controls"] .controls[target="controls"].active[target="controls"] {
+    transform: translateY(0);
+}
+
+.video_player[target="controls"] .controls[target="controls"] .progress-area[target="controls"] {
+    width: 100%;
+    height: 5px;
+    margin: auto;
+    background: #f0f0f063;
+    cursor: pointer;
+    position: relative;
+    transition: height 0.3s ease, transform 0.3s ease; /* Add transitions for height and transform */
+    transform-origin: center;
+}
+
+.video_player[target="controls"] .controls[target="controls"] .progress-area[target="controls"]:hover {
+    height: 5px;
+    transform: scaleY(1.5);
+}
+
+.controls[target="controls"] .progress-area[target="controls"] .progress-bar[target="controls"] {
+    position: relative;
+    width: 0%;
+    background: #f47521;
+    height: inherit;
+    border-radius: inherit;
+    cursor: pointer;
+}
+
+.controls[target="controls"] .progress-area[target="controls"] .progress-bar[target="controls"]::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #f47521;
+    transition: width 0.3 ease;
+}
+
+.video_player[target="controls"] .controls[target="controls"] .progress-area[target="controls"]:hover .progress-bar[target="controls"]::before {
+    width: calc(14 * 1.5px) !important;
+}
+
+
+.controls[target="controls"] .progress-area[target="controls"] .bufferedBar[target="controls"] {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 100%;
+    height: inherit;
+}
+
+.controls[target="controls"] .controls-list[target="controls"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 97%;
+    height: 66px;
+    margin: 0 auto;
+}
+
+.controls[target="controls"] .controls-list[target="controls"] .controls-left[target="controls"],
+.controls[target="controls"] .controls-list[target="controls"] .controls-right[target="controls"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls[target="controls"] .controls-left[target="controls"] .timer[target="controls"] {
+    display: inline-block;
+    font-size: 18px;
+    white-space: nowrap;
+    color: #fff;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.controls[target="controls"] .icon[target="controls"] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+
+.controls[target="controls"] .icon[target="controls"] .material-icons[target="controls"] {
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.controls[target="controls"] .icon[target="controls"] .material-icons[target="controls"].fast-rewind[target="controls"]:active {
+    transition: 0.2s;
+    transform: rotate(-45deg);
+}
+
+.controls[target="controls"] .icon[target="controls"] .material-icons[target="controls"].fast-forward[target="controls"]:active {
+    transition: 0.2s;
+    transform: rotate(45deg);
+}
+
+.controls[target="controls"] .icon[target="controls"] .volume_range[target="controls"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0px;
+    height: 7px;
+    background: #fff;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: 0.4s;
+}
+
+.controls[target="controls"] .icon[target="controls"] .volume_range[target="controls"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #fff;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.controls[target="controls"] .icon[target="controls"]:hover .volume_range[target="controls"] {
+    display: inline-block;
+    width: 64px;
+}
+
+.controls[target="controls"] .icon[target="controls"]:hover .volume_range[target="controls"]::-webkit-slider-thumb {
+    opacity: 1;
+    pointer-events: auto;
+    transition: 0.5s;
+}
+
+.controls-right[target="controls"] .icon[target="controls"] .auto-play[target="controls"] {
+    width: 38px;
+    height: 14px;
+    border-radius: 24px;
+    position: relative;
+    margin-right: 8px !important;
+    background: #b6b6b6;
+}
+
+.controls-right[target="controls"] .icon[target="controls"] .auto-play[target="controls"]::before {
+    content: "\e034";
+    position: absolute;
+    left: -5px;
+    top: 54%;
+    transform: translateY(-54%);
+    width: 20px;
+    height: 20px;
+    line-height: 24px;
+    font-size: 20px;
+    background: #727272;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-family: "Material Icons";
+}
+
+.controls-right[target="controls"] .icon[target="controls"] .auto-play[target="controls"].active[target="controls"]::before {
+    content: "\e037";
+    left: 19px;
+    font-family: "Material Icons";
+}
+
+.controls-right[target="controls"] .icon[target="controls"] .material-icons[target="controls"].settingsBtn[target="controls"] {
+    font-size: 28px;
+    transition: 0.3s;
+}
+
+.controls-right[target="controls"] .icon[target="controls"] .settingsBtn[target="controls"].active[target="controls"] {
+    transform: rotate(45deg);
+}
+
+.video_player[target="controls"] .captions[target="controls"],
+.video_player[target="controls"] .settings[target="controls"] {
+    position: absolute;
+    right: 29px;
+    bottom: 70px;
+    background: rgb(28 28 28 / 90%);
+    width: 256px;
+    max-height: 306px;
+    height: auto;
+    color: #fff;
+    overflow-y: auto;
+    z-index: 20;
+    display: none;
+    border-radius: 5px;
+}
+
+.video_player[target="controls"] .captions[target="controls"].active[target="controls"],
+.video_player[target="controls"] .settings[target="controls"].active[target="controls"] {
+    display: block;
+}
+
+.video_player[target="controls"] .captions[target="controls"] .caption[target="controls"] span[target="controls"],
+.video_player[target="controls"] .settings[target="controls"]>div[target="controls"]>span[target="controls"] {
+    font-size: 18px;
+    font-weight: 300;
+    padding: 18px 34px;
+    border-bottom: 1px solid rgb(83, 83, 83);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.video_player[target="controls"] .settings[target="controls"]>div[target="controls"] .icon[target="controls"] {
+    font-size: 22px;
+    margin: 8 13px;
+    cursor: pointer;
+}
+
+.video_player[target="controls"] .settings[target="controls"]>div[target="controls"] ul[target="controls"] li[target="controls"] span[target="controls"] {
+    pointer-events: none;
+}
+
+.video_player[target="controls"] .captions[target="controls"] .caption[target="controls"] ul[target="controls"],
+.video_player[target="controls"] .settings[target="controls"]>div[target="controls"] ul[target="controls"] {
+    position: relative;
+}
+
+.video_player[target="controls"] .captions[target="controls"] .caption[target="controls"] ul[target="controls"] li[target="controls"],
+.video_player[target="controls"] .settings[target="controls"]>div[target="controls"] ul[target="controls"] li[target="controls"] {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    padding: 12px 33px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.video_player[target="controls"] .captions[target="controls"] .caption[target="controls"] ul[target="controls"] li[target="controls"]:hover,
+.video_player[target="controls"] .settings[target="controls"]>div[target="controls"] ul[target="controls"] li[target="controls"]:hover {
+    background: rgba(28, 28, 28, 0.9);
+}
+
+.video_player[target="controls"] .captions[target="controls"] .caption[target="controls"] ul[target="controls"] li[target="controls"].active[target="controls"]::before,
+.video_player[target="controls"] .settings[target="controls"]>div[target="controls"] ul[target="controls"] li[target="controls"].active[target="controls"]::before {
+    content: "\e876";
+    font-family: "Material Icons";
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+.video_player[target="controls"] .captions[target="controls"]::-webkit-scrollbar,
+.video_player[target="controls"] .settings[target="controls"]::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+.video_player[target="controls"] .captions[target="controls"]::-webkit-scrollbar-thumb,
+.video_player[target="controls"] .settings[target="controls"]::-webkit-scrollbar-thumb {
+    height: 20px;
+    border: 2px solid transparent;
+    background: rgba(83, 83, 83, 0.9);
+    border-radius: 20px;
+}
+
+@media (max-width: 430px) {
+    .container[target="controls"] {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .controls[target="controls"] .icon[target="controls"] {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 24px;
+    }
+
+    .volume[target="controls"],
+    .volume_range[target="controls"],
+    .auto-play[target="controls"],
+    .fast-forward[target="controls"],
+    .picture_in_picutre[target="controls"] {
+        display: none;
+    }
+}
+
+.play_pause[target="controls"], .fullscreen[target="controls"] {
+    font-size: 34px !important;
+}
