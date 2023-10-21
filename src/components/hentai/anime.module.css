@@ -1,0 +1,193 @@
+@media (max-width: 768px) {
+    .animeTitle {
+        margin-top: var(--default-pageBorder);
+    }
+
+    .animeInfos {
+        margin-top: var(--default-pageBorder);
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .animeHeader {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .animeInfos {
+        margin-top: .5rem;
+    }
+
+    .animeDescription {
+        text-justify: auto;
+        width: 100%;
+    }
+
+    .seasonTitle {
+        padding-top: 1rem !important;
+        padding-inline: var(--default-pageBorder) !important;
+    }
+
+    .episodeList {
+        margin-inline: var(--default-pageBorder) !important;
+    }
+
+    .episode {
+        padding-inline: var(--default-pageBorder) !important;
+        padding-block: var(--default-pageBorder) !important;
+        width: 100% !important;
+    }
+}
+
+.thumbnailPortrait {
+    width: 100%;
+    max-width: 200px;
+    min-width: 100px;
+}
+
+.content {
+    margin-inline: calc(var(--default-pageBorder) + .5rem);
+}
+
+.animeHeader {
+    display: flex;
+    place-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.imgInfos {
+    flex-basis: 20%;
+    margin-inline: .5rem;
+}
+
+.basicInfos {
+    flex-basis: 50%;
+    margin-inline: .5rem;
+}
+
+.animeTitle {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.animeDescription {
+    line-height: 1.5;
+}
+
+.animeInfos {
+    flex-basis: 30%;
+    margin-inline: .5rem;
+    /* background: rgba(255,255,255,.1); */
+}
+
+.Description {
+    line-height: 2;
+    color: rgb(234, 223, 223);
+}
+
+.preDescription {
+    color: white;
+    font-weight: bold;
+    cursor: text;
+    user-select: text;
+}
+
+.divider {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    color: rgba(255, 255, 255, .1);
+    height: 1px;
+    margin-block: .5rem;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* gap: 2rem 1rem; */
+    /* margin: calc(var(--default-pageBorder) + 1.5rem); */
+    /* margin: 0 auto; */
+    /* width: 100%; */
+    margin-top: 3rem;
+
+    gap: 2rem 1rem;
+    margin: 0 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        margin: var(--default-pageBorder);
+    }
+
+    .contents {
+        padding: var(--default-pageBorder) !important;
+    }
+}
+
+.image {
+    width: 100%;
+    max-width: 350px;
+    padding-bottom: 0;
+    transition: box-shadow 200ms ease-in-out;
+    border-radius: 10px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.imgContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.videoDuration {
+    background-color: rgba(0, 0, 0, .85);
+    position: absolute;
+    color: var(--color);
+    right: 10px;
+    bottom: 10px;
+    padding: .1em .3em;
+    border-radius: .3em;
+    font-size: .9rem;
+}
+
+.title {
+    width: 100%;
+    max-width: 350px;
+    padding-top: 1rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    place-content: center;
+    width: 100%;
+}
+
+.image:hover {
+    border-radius: 10px;
+    box-shadow: 0 0 20px 10px var(--color_hover);
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* align-items: center; */
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+.metadata {
+    padding-top: var(--default-pageBorder);
+}

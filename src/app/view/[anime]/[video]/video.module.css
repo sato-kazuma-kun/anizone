@@ -1,0 +1,517 @@
+.videoSection {
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: var(--centerAlways);
+    min-height: calc(100vh - 51px);
+    width: 100%;
+    padding: 1.7%;
+}
+
+.recommendSection {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: left;
+    width: 100%;
+    padding: 1.7%;
+}
+
+.recommendation {
+    display: flex;
+    flex-direction: row;
+    align-items: var(--centerAlways);
+    place-content: left;
+    padding: .5rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 20px;
+}
+
+.recommendation:hover,
+.recommendation:focus-within {
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+.recommendThumbnail {
+    width: 100%;
+    max-width: 200px;
+    min-width: 200px;
+    padding-right: .5rem;
+    border-radius: 20px;
+}
+
+.recommendImage {
+    position: relative;
+}
+
+.recommendImage p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    z-index: 1;
+    /* filter: brightness(100%); */
+}
+
+.imageFilter .recommendThumbnail {
+    filter: brightness(40%);
+}
+
+.recommendData {
+    display: flex;
+    flex-direction: column;
+    height: 70% !important;
+    justify-content: space-between;
+    padding-left: .5rem;
+}
+
+.recommendation a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.recommendName {
+    color: rgb(234, 223, 223);
+}
+
+.recommendEpisode {
+    font-weight: bold;
+}
+
+.videoDetails {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    padding-top: 1rem;
+}
+
+.title {
+    padding: .15rem;
+}
+
+/* #Name {
+    font-size: 19px;
+    color: #f47521;
+    color: white;
+} */
+
+/* #Episode {
+    color: #fff;
+    font-size: 17px;
+} */
+
+.container {
+    position: relative;
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Video player Styling */
+.container .videoPlayer {
+    position: relative;
+    max-width: 100%;
+    width: 1000px;
+    height: 100%;
+    /* background: #000; */
+    overflow: hidden;
+    /* background-color: black; */
+
+}
+
+.container .videoPlayer .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 4px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    z-index: 1;
+    animation: animate 0.6s linear infinite;
+    display: none;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.container .videoPlayer .thumbnail {
+    position: absolute;
+    bottom: 80px;
+    left: calc(var(--x) + 11px);
+    transform: translateX(-50%);
+    width: 165px;
+    height: 90px;
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    display: none;
+}
+
+/* .container .videoPlayer.openFullScreen .thumbnail {
+    width: 256px !important;
+    height: 144px !important;
+    background-repeat: no-repeat !important;
+  } */
+
+.container .videoPlayer .mainVideo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+
+.videoPlayer .progressAreaTime {
+    position: absolute;
+    left: calc(var(--x) + 11px);
+    transform: translateX(-50%);
+    bottom: 50px;
+    min-width: 60px;
+    text-align: center;
+    white-space: nowrap;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    z-index: 1;
+    display: none;
+}
+
+.container .videoPlayer .controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background: rgb(0 0 0 / 29%);
+    box-shadow: 0 0 40px 10px rgb(0 0 0 / 25%);
+    z-index: 3;
+    transform: translateY(180%);
+    transition: 0.3s;
+    padding: 0px 10px;
+}
+
+.container .videoPlayer .controls.active {
+    transform: translateY(0);
+}
+
+.videoPlayer .controls .progressArea {
+    width: 100%;
+    height: 5px;
+    margin: auto;
+    background: #f0f0f063;
+    cursor: pointer;
+    position: relative;
+    transition: height 0.2s ease-in-out;
+}
+
+.controls .progressArea .progressBar {
+    position: relative;
+    width: 0%;
+    background: rgb(255, 174, 0);
+    height: inherit;
+    border-radius: inherit;
+    cursor: pointer;
+    transition: height 0.2s ease-in-out;
+}
+
+.controls .progressArea .progressBar::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgb(255, 174, 0);
+}
+
+.controls .progressArea .bufferedBar {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 100%;
+    height: inherit;
+    transition: height 0.2s ease-in-out;
+}
+
+.controls .progressArea:hover,
+.bufferedBar:hover,
+.progress-bar:hover {
+    height: 10px;
+}
+
+.controls .controlsList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 97%;
+    height: 46px;
+    margin: 0 auto;
+}
+
+.controls .controlsList .controlsLeft,
+.controls .controlsList .controlsRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls .controlsLeft .timer {
+    display: inline-block;
+    font-size: 14px;
+    white-space: nowrap;
+    color: #fff;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.controls .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+
+.controls .icon .material-icons {
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.controls .icon .material-icons.fast-rewind:active {
+    transition: 0.2s;
+    transform: rotate(-45deg);
+}
+
+.controls .icon .material-icons.fast-forward:active {
+    transition: 0.2s;
+    transform: rotate(45deg);
+}
+
+.controls .icon .volumeRange {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0px;
+    height: 3px;
+    background: #fff;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: 0.4s;
+}
+
+.controls .icon .volumeRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #fff;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.controls .icon:hover .volumeRange {
+    display: inline-block;
+    width: 60px;
+}
+
+.controls .icon:hover .volumeRange::-webkit-slider-thumb {
+    opacity: 1;
+    pointer-events: auto;
+    transition: 0.5s;
+}
+
+.controlsRight .icon .autoPlay {
+    width: 30px;
+    height: 10px;
+    border-radius: 20px;
+    position: relative;
+    margin-right: 8px !important;
+    background: #b6b6b6;
+}
+
+.controlsRight .icon .autoPlay::before {
+    content: "\e034";
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 17px;
+    height: 17px;
+    line-height: 17px;
+    font-size: 14px;
+    background: #727272;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-family: "Material Icons";
+}
+
+.controlsRight .icon .autoPlay.active::before {
+    content: "\e037";
+    left: 15px;
+    font-family: "Material Icons";
+}
+
+.controlsRight .icon .material-icons.settingsBtn {
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.controlsRight .icon .settingsBtn.active {
+    transform: rotate(45deg);
+}
+
+.videoPlayer .captions,
+.videoPlayer .settings {
+    position: absolute;
+    right: 25px;
+    bottom: 62px;
+    background: rgb(28 28 28 / 90%);
+    width: 200px;
+    max-height: 250px;
+    height: auto;
+    color: #fff;
+    overflow-y: auto;
+    z-index: 20;
+    display: none;
+    border-radius: 5px;
+}
+
+.videoPlayer .captions.active,
+.videoPlayer .settings.active {
+    display: block;
+}
+
+.videoPlayer .captions .caption span,
+.videoPlayer .settings>div>span {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 15px 30px;
+    border-bottom: 1px solid rgb(83, 83, 83);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.videoPlayer .settings>div .icon {
+    font-size: 14px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.videoPlayer .settings>div ul li span {
+    pointer-events: none;
+}
+
+.videoPlayer .captions .caption ul,
+.videoPlayer .settings>div ul {
+    position: relative;
+}
+
+.videoPlayer .captions .caption ul li,
+.videoPlayer .settings>div ul li {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    padding: 12px 33px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.videoPlayer .captions .caption ul li:hover,
+.videoPlayer .settings>div ul li:hover {
+    background: rgba(28, 28, 28, 0.9);
+}
+
+.videoPlayer .captions .caption ul li.active::before,
+.videoPlayer .settings>div ul li.active::before {
+    content: "\e876";
+    font-family: "Material Icons";
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+.videoPlayer .captions::-webkit-scrollbar,
+.videoPlayer .settings::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+.videoPlayer .captions::-webkit-scrollbar-thumb,
+.videoPlayer .settings::-webkit-scrollbar-thumb {
+    height: 20px;
+    border: 2px solid transparent;
+    background: rgba(83, 83, 83, 0.9);
+    border-radius: 20px;
+}
+
+@media (max-width: 430px) {
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .controls .icon {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 24px;
+    }
+
+    .volume,
+    .volumeRange,
+    .autoPlay,
+    .fast-forward,
+    .pictureInPicutre {
+        display: none;
+    }
+}
