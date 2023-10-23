@@ -32,8 +32,8 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-row items-center justify-center place-contents-center gap-3">
-            <Button size="3" bgColor="purple" txtColor="white" click="/browse-anime">Browse more Anime</Button>
-            <Button size="3" bgColor="purple" txtColor="white" click="/view/amv">Browse more AMVs</Button>
+            <Button size="3" bgColor="purple" txtColor="white" linkClick="/browse-anime">Browse more Anime</Button>
+            <Button size="3" bgColor="purple" txtColor="white" linkClick="/view/amv">Browse more AMVs</Button>
           </div>
         </section>
       </footer>
