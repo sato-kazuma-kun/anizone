@@ -6,7 +6,7 @@ import { Metadata } from "next"
 import SuggesstionComponent from '@/components/suggesstion/suggestion'
 import 'react-toastify/dist/ReactToastify.css'
 import '@radix-ui/themes/styles.css'
-import { Button } from "@/components/ui/button/aniflex-button"
+import { AniflexButton } from "@/components/ui/button/aniflex-button"
 import DataFetchingComponent from "@/components/suggesstion/suggesstion2.0"
 import { calcUserPref } from '@/algorithm/anime-suggestion'
 
@@ -32,8 +32,8 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-row items-center justify-center place-contents-center gap-3">
-            <Button size="3" bgColor="purple" txtColor="white" linkClick="/browse-anime">Browse more Anime</Button>
-            <Button size="3" bgColor="purple" txtColor="white" linkClick="/view/amv">Browse more AMVs</Button>
+            <AniflexButton size="3" bgColor="purple" txtColor="white" click="/browse-anime">Browse more Anime</AniflexButton>
+            <AniflexButton size="3" bgColor="purple" txtColor="white" click="/view/amv">Browse more AMVs</AniflexButton>
           </div>
         </section>
       </footer>
