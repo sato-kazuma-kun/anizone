@@ -55,7 +55,6 @@
 .slides {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: hidden;
     width: 100vw;
     max-width: 805px;
     z-index: 2;
