@@ -133,7 +133,6 @@ export default function CarouselComponent() {
                         isAnimating = false
                     },
                 })
-            } else {
             }
         }
 
@@ -149,6 +148,16 @@ export default function CarouselComponent() {
         // Adding event listener for click event on calling functions of each element respectively
         prevButton?.addEventListener('click', handlePrevButtonClick)
         nextButton?.addEventListener('click', handleNextButtonClick)
+        slides?.addEventListener('wheel', (event) => {
+            if (event.deltaY < 0) {
+                handlePrevButtonClick();
+            } else if (event.deltaY > 0) {
+                handleNextButtonClick();
+            }
+
+            // Prevent the default Y-axis scrolling behavior
+            event.preventDefault();
+        });
 
         slideInterval = setInterval(autoAdvanceSlides, slideDuration)
 
