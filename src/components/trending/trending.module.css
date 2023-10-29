@@ -11,6 +11,7 @@
 
 @media (max-width: 768px) {
     .wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         margin-left: var(--default-pageBorder);
         margin-right: var(--default-pageBorder);
     }
