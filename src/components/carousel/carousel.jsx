@@ -10,6 +10,10 @@ import ErrorComponent from '@/components/error/error'
 import { Tooltip } from 'react-tooltip'
 import { animeDataAPI } from '@/api/api'
 
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
 // Main Function
 export default function CarouselComponent() {
     // Initializing
@@ -18,6 +22,11 @@ export default function CarouselComponent() {
     const slideWidth = 805
     const slideDuration = 5000
     const [isLoading, setIsLoading] = useState(true)
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(isMobileDevice());
+    }, []);
 
 
     // function for fetching Data from an API Endpoint
@@ -113,16 +122,19 @@ export default function CarouselComponent() {
 
         // Function to automatically slide through the image carousel
         function autoAdvanceSlides() {
-            const numSlides = contents.length
-            currentSlide = (currentSlide + 1) % numSlides
-            const targetLeft = currentSlide * slideWidth
-            gsap.to(`.${carousel.slides}`, {
-                scrollLeft: targetLeft,
-                duration: 0.5,
-                onComplete: () => {
-                    isAnimating = false
-                },
-            })
+            if (!isMobileDevice()) {
+                const numSlides = contents.length
+                currentSlide = (currentSlide + 1) % numSlides
+                const targetLeft = currentSlide * slideWidth
+                gsap.to(`.${carousel.slides}`, {
+                    scrollLeft: targetLeft,
+                    duration: 0.5,
+                    onComplete: () => {
+                        isAnimating = false
+                    },
+                })
+            } else {
+            }
         }
 
         // Calling function to update the slide width accourding to user's display/screen size
@@ -146,13 +158,6 @@ export default function CarouselComponent() {
         }
     }, [contents])
 
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        // Check if it's a mobile device and set the state accordingly
-        setIsMobile(/Mobi|Android/i.test(navigator.userAgent));
-    }, []);
-
     // Defining elements
     return (
         <section id='carousel' className={carousel.slider}> {/* Root Element */}
@@ -166,7 +171,7 @@ export default function CarouselComponent() {
             {/* If not loading and there are no error then it'll render this element */}
             {!error && !isLoading && (
                 <>
-                    <div className={carousel.slides}>
+                    <div className={carousel.slides} style={{ overflowX: isMobile ? 'scroll' : 'hidden' }}>
                         {contents?.map((content) => (
                             <Link key={content.id} href={`/view/${content.anime}`} className={carousel.imageLink}>
                                 <Image data-tooltip-id="carousel-tooltip" data-tooltip-content={content.title} alt={content.title} width={805} height={143} key={content.id} src={content['cover-image'][0]['landscape']} className={carousel.slide} id="image" />
